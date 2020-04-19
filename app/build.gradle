@@ -32,6 +32,7 @@ dependencies {
 
     implementation project(path: ':base')
     implementation project(path: ':utils')
+    implementation project(path: ':theme')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
