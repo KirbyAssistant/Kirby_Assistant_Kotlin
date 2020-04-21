@@ -12,6 +12,6 @@ object PhoneUtil  {
     val product: String
         get() = Build.PRODUCT
 
-    val androidVersion: String
-        get() = Build.VERSION.RELEASE
+    val androidVersion: Int
+        get() = Build.VERSION.SDK_INT
 }

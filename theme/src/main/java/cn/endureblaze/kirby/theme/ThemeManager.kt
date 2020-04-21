@@ -11,7 +11,7 @@ import androidx.appcompat.app.AlertDialog
 class ThemeManager (context: Context) {
 
     private var themeContext: Context = context
-    private var themeShard: SharedPreferences = themeContext.getSharedPreferences(ThemeManager.FILE_NAME, 0)
+    private var themeShard: SharedPreferences = themeContext.getSharedPreferences(FILE_NAME, 0)
     private var themeShardEdit: SharedPreferences.Editor = themeShard.edit()
 
     companion object {
@@ -34,7 +34,7 @@ class ThemeManager (context: Context) {
         R.drawable.theme_pink
     )
 
-    val currThemeId get() = themeShard.getInt("themeId", 0)
+    private val currThemeId get() = themeShard.getInt("themeId", 0)
 
     fun showSwitchDialog(callback: Unit) {
         val itemSelected: Int = currThemeId
@@ -76,7 +76,7 @@ class ThemeManager (context: Context) {
         }
     }
 
-    fun switchTheme(theme_id: Int) = themeShardEdit.putInt("themeId", theme_id).apply()
+    private fun switchTheme(theme_id: Int) = themeShardEdit.putInt("themeId", theme_id).apply()
 
     fun getThemeColorFromId(id: Int): Int {
         val typedValue = TypedValue()

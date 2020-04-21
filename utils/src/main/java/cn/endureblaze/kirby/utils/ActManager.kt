@@ -58,7 +58,7 @@ object ActManager {
     /**
      * 结束所有 Activity
      */
-    fun finishAllActivity() {
+    private fun finishAllActivity() {
         for (activity in activityStack!!) {
             if (!activity?.isFinishing!!) {
                 activity.finish()

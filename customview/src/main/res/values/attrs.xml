@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomImageView">
+        <!--形状类型-->
+        <attr name="shape_type">
+            <!--圆形-->
+            <enum name="SHAPE_CIRCLE" value="0"/>
+            <!--圆角-->
+            <enum name="SHAPE_ROUND" value="1"/>
+        </attr>
+        <!--是否显示边框-->
+        <attr name="show_border" format="boolean"/>
+        <!--边框宽度-->
+        <attr name="border_width" format="dimension"/>
+        <!--边框颜色-->
+        <attr name="border_color" format="color"/>
+        <!--是否显示右上角圆点-->
+        <attr name="show_circle_dot" format="boolean"/>
+        <!--圆点的颜色-->
+        <attr name="circle_dot_color" format="color"/>
+        <!--圆点的半径-->
+        <attr name="circle_dot_radius" format="dimension"/>
+        <!--左上角 X 轴方向的半径-->
+        <attr name="left_top_radiusX" format="dimension"/>
+        <!--左上角 Y 轴方向的半径-->
+        <attr name="left_top_radiusY" format="dimension"/>
+        <!--右上角 X 轴方向的半径-->
+        <attr name="right_top_radiusX" format="dimension"/>
+        <!--右上角 Y 轴方向的半径-->
+        <attr name="right_top_radiusY" format="dimension"/>
+        <!--右下角 X 轴方向的半径-->
+        <attr name="right_bottom_radiusX" format="dimension"/>
+        <!--右下角 Y 轴方向的半径-->
+        <attr name="right_bottom_radiusY" format="dimension"/>
+        <!--左下角 X 轴方向的半径-->
+        <attr name="left_bottom_radiusX" format="dimension"/>
+        <!--左下角 Y 轴方向的半径-->
+        <attr name="left_bottom_radiusY" format="dimension"/>
+    </declare-styleable>
+</resources>

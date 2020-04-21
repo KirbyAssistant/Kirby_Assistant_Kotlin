@@ -1,18 +1,32 @@
 package cn.endureblaze.kirby
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import cn.endureblaze.kirby.base.BaseActivity
-import cn.endureblaze.kirby.theme.ThemeManager
-import cn.endureblaze.kirby.utils.ToastUtil
 
 class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        ThemeManager(this).showSwitchDialog(test())
+        initToolbar()
     }
-    private fun test(){
-        ToastUtil.show("yyyyy")
+
+    private fun initToolbar(){
+        val toolbar:Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        toolbar.setSubtitle(R.string.title_res)
+    }
+
+    /**
+     * 用于重置 MainActivity
+     */
+    private fun reloadMain(){
+        val reloadMain = Intent(this,MainActivity::class.java)
+        reloadMain.putExtra("theme",true)
+        startActivity(reloadMain)
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+        finish()
     }
 }

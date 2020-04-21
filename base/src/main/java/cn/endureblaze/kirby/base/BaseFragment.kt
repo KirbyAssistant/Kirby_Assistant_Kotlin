@@ -17,7 +17,6 @@ abstract class BaseFragment : Fragment() {
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
         //setUserVisibleHint()有可能在fragment的生命周期外被调用
-        //setUserVisibleHint()有可能在fragment的生命周期外被调用
         if (rootView == null) {
             return
         }
