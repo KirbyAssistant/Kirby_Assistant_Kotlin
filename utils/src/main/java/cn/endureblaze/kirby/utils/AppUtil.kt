@@ -15,6 +15,9 @@ val labelRes: Int = packageInfo.applicationInfo.labelRes
 val applicationInfo: ApplicationInfo = packageManager.getApplicationInfo(context.packageName, 0)
 val metaData: Bundle = packageInfo.applicationInfo.metaData
 
+/**
+ * 获取应用程序信息相关
+ */
 object AppUtil {
     /**
      * 获取应用程序名称

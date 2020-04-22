@@ -2,6 +2,9 @@ package cn.endureblaze.kirby.utils
 
 import android.widget.Toast
 
+/**
+ * Toast 的简单封装
+ */
 object ToastUtil {
     /**
      * 传入字符串然后输出

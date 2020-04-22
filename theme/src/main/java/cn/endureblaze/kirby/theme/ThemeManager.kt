@@ -8,6 +8,10 @@ import android.view.LayoutInflater
 import android.widget.GridView
 import androidx.appcompat.app.AlertDialog
 
+/**
+ * 主题的管理器
+ * @param context 传入一个上下文用于初始化
+ */
 class ThemeManager (context: Context) {
 
     private var themeContext: Context = context
@@ -36,6 +40,10 @@ class ThemeManager (context: Context) {
 
     private val currThemeId get() = themeShard.getInt("themeId", 0)
 
+    /**
+     * 打开一个用于切换主题的对话框
+     * @param callback 用于切换完毕后执行的一个函数，不能有返回值
+     */
     fun showSwitchDialog(callback: Unit) {
         val itemSelected: Int = currThemeId
         val switchDialog = AlertDialog.Builder(themeContext)
@@ -57,6 +65,9 @@ class ThemeManager (context: Context) {
         }
     }
 
+    /**
+     * 用于设置主题，直接链式调用即可
+     */
     fun setAppTheme() {
         when (currThemeId) {
             ThemeEnum.BLUE_THEME -> themeContext.setTheme(R.style.BlueAppTheme)
@@ -78,12 +89,19 @@ class ThemeManager (context: Context) {
 
     private fun switchTheme(theme_id: Int) = themeShardEdit.putInt("themeId", theme_id).apply()
 
+    /**
+     * 获取主题的一些颜色
+     * @param id 需要获取的 id 值，例如 R.attr.colorPrimary
+     */
     fun getThemeColorFromId(id: Int): Int {
         val typedValue = TypedValue()
         themeContext.theme.resolveAttribute(id, typedValue, true)
         return typedValue.data
     }
 
+    /**
+     * 获取系统是否为暗色模式
+     */
     val isDarkMode: Boolean
         get() = (themeContext.resources.configuration.uiMode
                 and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES

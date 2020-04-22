@@ -4,11 +4,15 @@ import android.app.Activity
 import androidx.fragment.app.FragmentActivity
 import java.util.*
 
+/**
+ * 用栈来管理所有的 Activity
+ */
 object ActManager {
     private var activityStack: Stack<Activity>? = null
 
     /**
      * 单例模式 创建单一实例
+     * @return 返回一个 ActManager 对象
      */
     fun getAppManager(): ActManager = this
 
@@ -21,6 +25,7 @@ object ActManager {
 
     /**
      * 添加Activity到堆栈
+     * @param activity 添加进栈里的 Activity
      */
     fun addActivity(activity: Activity) {
         initActivityStack()
@@ -41,6 +46,7 @@ object ActManager {
 
     /**
      * 结束指定类名的 Activity
+     * @param cls 需要结束的 Activity 类名
      */
     fun finishActivity(cls: Activity? = activityStack?.lastElement()) {
         val activityList: MutableList<Activity> = ArrayList()
