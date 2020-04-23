@@ -19,6 +19,10 @@ class MainActivity : BaseActivity() {
         toolbar.setSubtitle(R.string.title_res)
     }
 
+    private fun initFragmentPager(){
+
+    }
+
     /**
      * 用于重置 MainActivity
      */

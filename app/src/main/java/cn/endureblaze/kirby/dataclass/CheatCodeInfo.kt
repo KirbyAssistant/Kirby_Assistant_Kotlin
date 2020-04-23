@@ -1,6 +1,6 @@
 package cn.endureblaze.kirby.dataclass
 
-data class CheatCode(
+data class CheatCodeInfo(
     val id: String,
     val cheatCode: String
 )

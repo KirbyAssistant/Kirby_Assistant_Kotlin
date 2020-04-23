@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import cn.bmob.v3.Bmob
 import cn.endureblaze.kirby.theme.ThemeManager
 import cn.endureblaze.kirby.utils.ActManager
-import cn.endureblaze.kirby.utils.FileUtil
 import com.oasisfeng.condom.CondomContext
 
 @SuppressLint("Registered")
