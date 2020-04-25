@@ -44,6 +44,8 @@ dependencies {
 
     implementation 'cn.bmob.android:bmob-sdk:3.7.4'
     implementation 'com.oasisfeng.condom:library:2.5.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
