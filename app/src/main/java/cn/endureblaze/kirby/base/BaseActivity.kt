@@ -3,10 +3,8 @@ package cn.endureblaze.kirby.base
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import cn.bmob.v3.Bmob
 import cn.endureblaze.kirby.theme.ThemeManager
 import cn.endureblaze.kirby.utils.ActManager
-import com.oasisfeng.condom.CondomContext
 
 @SuppressLint("Registered")
 open class BaseActivity: AppCompatActivity() {
@@ -15,6 +13,6 @@ open class BaseActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         ActManager.addActivity(this)
         ThemeManager(this).setAppTheme()
-        Bmob.initialize(CondomContext.wrap(this,"Bmob"),"e39c2e15ca40b358b0dcc933236c1165")
+        //Bmob.initialize(CondomContext.wrap(this,"Bmob"),"e39c2e15ca40b358b0dcc933236c1165")
     }
 }

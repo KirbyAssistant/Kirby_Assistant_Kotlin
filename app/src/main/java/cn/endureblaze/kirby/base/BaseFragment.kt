@@ -5,28 +5,43 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment : Fragment() {
+/**
+ * 封装一个有懒加载的 Fragment
+ * @param T 传入泛型的 ViewBinding
+ * @param layoutId 传入布局用来跳过在子类中初始化传入 inflater
+ */
+abstract class BaseFragment<T : ViewBinding>(private val layoutId: Int) : Fragment(layoutId) {
     private var isViewOK = false //是否完成 View 初始化
     private var isFirst = true //是否为第一次加载
 
+    private var _binding: T? = null
+
+    val binding get() = _binding!!
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = getFragmentLayout(inflater, container, savedInstanceState)
-        initView(view)
+        val view = inflater.inflate(layoutId, container, false)
         // 完成 initView 后改变view的初始化状态为完成
         isViewOK = true
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _binding = initBinding(view)
+        initView()
+    }
+
     /**
-     * 获取 fragment 的布局
+     * 传入对应的 ViewBinding
      */
-    abstract fun getFragmentLayout(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View
+    abstract fun initBinding(view: View): T
 
     /**
      * fragment 初始化 view 的方法
      */
-    abstract fun initView(view: View)
+    abstract fun initView()
 
     override fun onResume() {
         super.onResume()
@@ -47,4 +62,10 @@ abstract class BaseFragment : Fragment() {
      * fragment 实现懒加载的方法，即在这里加载数据
      */
     abstract fun loadDate()
+
+    //释放数据
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
+    }
 }

@@ -10,12 +10,16 @@ import androidx.viewpager.widget.ViewPager
 import cn.endureblaze.kirby.R
 import cn.endureblaze.kirby.adapter.ResPagerAdapter
 import cn.endureblaze.kirby.base.BaseFragment
+import cn.endureblaze.kirby.databinding.MainResFragmentBinding
+import cn.endureblaze.kirby.databinding.ViewpagerCheatcodeBinding
+import cn.endureblaze.kirby.databinding.ViewpagerConsoleBinding
+import cn.endureblaze.kirby.databinding.ViewpagerEmulatorBinding
 import cn.endureblaze.kirby.res.adapter.ConsoleAdapter
 import cn.endureblaze.kirby.res.dataclass.Console
 import cn.endureblaze.kirby.res.dataclass.Emulator
 import com.google.android.material.tabs.TabLayout
 
-class MainResFragment : BaseFragment() {
+class MainResFragment : BaseFragment<MainResFragmentBinding>(R.layout.main_res_fragment) {
 
     /**
      * mainResPagerTitleList 页面标题列表
@@ -31,26 +35,26 @@ class MainResFragment : BaseFragment() {
     private var consoleList: MutableList<Console> = ArrayList()
     private var emulatorList: MutableList<Emulator> = ArrayList()
 
-    override fun getFragmentLayout(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.main_res_fragment, container, false)
+    override fun initBinding(view: View): MainResFragmentBinding {
+        return MainResFragmentBinding.bind(view)
     }
 
-    override fun initView(view: View) {
+    override fun initView() {
         val resPagerAdapter = ResPagerAdapter(mainResPagerTitleList, mainResPagerViewList)
 
-        val mViewPager: ViewPager = view.findViewById(R.id.main_res_viewpager)
-        val mTabLayout: TabLayout = view.findViewById(R.id.main_res_tablayout)
+        val mViewPager = binding.mainResViewpager
+        val mTabLayout = binding.mainResTablayout
         val inflater = LayoutInflater.from(activity)
 
         //创建页卡视图对象
-        val consolePager = inflater.inflate(R.layout.viewpager_console, null, false)
-        val emulatorPager = inflater.inflate(R.layout.viewpager_emulator, null, false)
-        val cheatCodePager = inflater.inflate(R.layout.viewpager_cheatcode, null, false)
+        val consolePagerBinding = ViewpagerConsoleBinding.inflate(inflater)
+        val emulatorPagerBinding = ViewpagerEmulatorBinding.inflate(inflater)
+        val cheatCodePagerBinding = ViewpagerCheatcodeBinding.inflate(inflater)
 
         //把页卡加入列表
-        mainResPagerViewList.add(consolePager)
-        mainResPagerViewList.add(emulatorPager)
-        mainResPagerViewList.add(cheatCodePager)
+        mainResPagerViewList.add(consolePagerBinding.root)
+        mainResPagerViewList.add(emulatorPagerBinding.root)
+        mainResPagerViewList.add(cheatCodePagerBinding.root)
 
         //添加对应的标题
         activity?.resources?.getString(R.string.tab_game)?.let { mainResPagerTitleList.add(it) }
@@ -59,9 +63,9 @@ class MainResFragment : BaseFragment() {
 
 
         //从页卡视图中拿出列表
-        rlvConsole = consolePager.findViewById(R.id.console_list)
-        rlvEmulator = emulatorPager.findViewById(R.id.emulator_list)
-        rlvCheatCode = cheatCodePager.findViewById(R.id.cheatcode_list)
+        rlvConsole = consolePagerBinding.consoleList
+        rlvEmulator = emulatorPagerBinding.emulatorList
+        rlvCheatCode = cheatCodePagerBinding.cheatcodeList
 
         mTabLayout.tabMode = TabLayout.MODE_FIXED
         mTabLayout.addTab(mTabLayout.newTab().setText(mainResPagerTitleList[0]))

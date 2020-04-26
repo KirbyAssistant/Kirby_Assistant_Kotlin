@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="KotlinScriptingSettings">
+    <scriptDefinition className="org.jetbrains.kotlin.idea.scripting.gradle.GradleKotlinScriptDefinitionFromAnnotatedTemplate" definitionName="KotlinInitScript">
+      <order>0</order>
+      <isEnabled>false</isEnabled>
+    </scriptDefinition>
+    <scriptDefinition className="org.jetbrains.kotlin.idea.scripting.gradle.GradleKotlinScriptDefinitionFromAnnotatedTemplate" definitionName="KotlinSettingsScript">
+      <order>1</order>
+      <isEnabled>false</isEnabled>
+    </scriptDefinition>
+    <scriptDefinition className="org.jetbrains.kotlin.idea.scripting.gradle.GradleKotlinScriptDefinitionFromAnnotatedTemplate" definitionName="KotlinBuildScript">
+      <order>2</order>
+      <isEnabled>false</isEnabled>
+    </scriptDefinition>
+    <scriptDefinition className="org.jetbrains.kotlin.mainKts.MainKtsScript" definitionName="MainKtsScript">
+      <order>3</order>
+      <isEnabled>false</isEnabled>
+    </scriptDefinition>
+    <scriptDefinition className="org.jetbrains.kotlin.idea.core.script.StandardIdeScriptDefinition" definitionName="Kotlin Script">
+      <order>4</order>
+    </scriptDefinition>
+  </component>
+</project>

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
+import cn.endureblaze.kirby.theme.databinding.ThemeListDialogLayoutBinding
 import kotlin.properties.Delegates
 
 var checkItem by Delegates.notNull<Int>()
@@ -45,7 +46,8 @@ class ThemeListAdapter constructor(private val context: Context, private val the
     }
 
     class Holder(convertView: View) {
-        var imageView1: ImageView = convertView.findViewById(R.id.img_1)
-        var imageView2: ImageView = convertView.findViewById(R.id.img_2)
+        private val themeListDialogBinding = ThemeListDialogLayoutBinding.bind(convertView)
+        var imageView1: ImageView = themeListDialogBinding.img1
+        var imageView2: ImageView = themeListDialogBinding.img2
     }
 }
