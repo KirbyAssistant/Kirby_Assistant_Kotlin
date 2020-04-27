@@ -6,9 +6,9 @@ import androidx.viewpager.widget.PagerAdapter
 
 class ResPagerAdapter constructor(private val titleList: List<String>, private val viewList: List<View>) : PagerAdapter() {
 
-    override fun isViewFromObject(view: View, `object`: Any): Boolean = view == `object`
+    override fun isViewFromObject(view: View, `object`: Any) = view == `object`
 
-    override fun getCount(): Int =viewList.size
+    override fun getCount() =viewList.size
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         container.addView(viewList[position])
@@ -17,5 +17,5 @@ class ResPagerAdapter constructor(private val titleList: List<String>, private v
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) = container.removeView(viewList[position])
 
-    override fun getPageTitle(position: Int): CharSequence? = titleList[position]
+    override fun getPageTitle(position: Int) = titleList[position]
 }

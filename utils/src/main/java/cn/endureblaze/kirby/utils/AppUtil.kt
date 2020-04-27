@@ -6,6 +6,7 @@ import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
+import android.os.Build
 import android.os.Bundle
 
 val context: Context = ActManager.currentActivity as Context
@@ -27,7 +28,14 @@ object AppUtil {
     /**
      * 获取程序版本信息
      */
-    val versionCode: Int get() = packageInfo.versionCode
+    val versionCode: Long
+        get() {
+            return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
+                packageInfo.versionCode.toLong()
+            }else{
+                packageInfo.longVersionCode
+            }
+        }
 
     /**
      * 获取图标

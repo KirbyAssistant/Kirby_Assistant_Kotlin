@@ -1,12 +1,9 @@
 package cn.endureblaze.kirby.res
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager.widget.ViewPager
 import cn.endureblaze.kirby.R
 import cn.endureblaze.kirby.adapter.ResPagerAdapter
 import cn.endureblaze.kirby.base.BaseFragment

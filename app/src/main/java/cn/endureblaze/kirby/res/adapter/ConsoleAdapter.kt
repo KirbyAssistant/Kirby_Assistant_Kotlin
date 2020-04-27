@@ -47,7 +47,7 @@ class ConsoleAdapter constructor(private val consoleList: List<Console>) :
         return holder
     }
 
-    override fun getItemCount(): Int = consoleList.size
+    override fun getItemCount() = consoleList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val console = consoleList[position]

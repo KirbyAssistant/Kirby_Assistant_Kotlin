@@ -2,9 +2,7 @@ package cn.endureblaze.kirby
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.FragmentPagerAdapter
-import androidx.viewbinding.ViewBinding
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
 import cn.endureblaze.kirby.adapter.ViewPagerAdapter
 import cn.endureblaze.kirby.base.BaseActivity
@@ -13,7 +11,6 @@ import cn.endureblaze.kirby.customview.NoScrollViewPager
 import cn.endureblaze.kirby.databinding.ActivityMainBinding
 import cn.endureblaze.kirby.databinding.LayoutToolbarBinding
 import cn.endureblaze.kirby.res.MainResFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 
 class MainActivity : BaseActivity() {
@@ -21,10 +18,9 @@ class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var toolbarBinding: LayoutToolbarBinding
 
-    private var fragmentList: MutableList<BaseFragment<*>> = ArrayList();
-    private var pagerTitleList: MutableList<String> = ArrayList<String>();
+    private var fragmentList: MutableList<BaseFragment<*>> = ArrayList()
+    private var pagerTitleList: MutableList<String> = ArrayList<String>()
 
-    private lateinit var toolbar: Toolbar
     private lateinit var mainFragmentViewPager: NoScrollViewPager
 
     private var fragmentPos = 0
@@ -62,7 +58,7 @@ class MainActivity : BaseActivity() {
             FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT,
             fragmentList
         )
-        mainFragmentViewPager.setScrool(false)
+        mainFragmentViewPager.setScroll(false)
         mainFragmentViewPager.offscreenPageLimit = 4
     }
 

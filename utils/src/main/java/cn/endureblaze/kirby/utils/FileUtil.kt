@@ -19,7 +19,7 @@ object FileUtil {
             return null
         }
         //判断目录是否存在，如果不存在就创建
-        val dir: File = File(filePath)
+        val dir = File(filePath)
         if (!dir.exists()) {
             dir.mkdirs()
         }

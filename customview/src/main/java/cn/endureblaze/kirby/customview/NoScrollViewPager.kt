@@ -15,8 +15,8 @@ class NoScrollViewPager : ViewPager {
     //控制是否可以滑动
     private var isScroll: Boolean = false
 
-    fun setScrool(scrool: Boolean) {
-        isScroll = scrool
+    fun setScroll(scroll: Boolean) {
+        isScroll = scroll
     }
 
     @SuppressLint("ClickableViewAccessibility")

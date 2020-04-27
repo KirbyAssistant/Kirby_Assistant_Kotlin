@@ -19,27 +19,22 @@ class ThemeListAdapter constructor(private val context: Context, private val the
             mConvertView = LayoutInflater.from(context).inflate(R.layout.theme_list_dialog_layout, null)
             holder = Holder(mConvertView)
             mConvertView.tag = holder
-        }else{
-            holder= mConvertView.tag as Holder
+        } else {
+            holder = mConvertView.tag as Holder
         }
         holder.imageView1.setImageResource(themeList[position])
-        if(checkItem == position){
+        if (checkItem == position) {
             holder.imageView2.setImageResource(R.drawable.ic_kirby_done)
         }
         return mConvertView
     }
 
-    override fun getItem(position: Int): Any {
-        return position
-    }
+    override fun getItem(position: Int) = position
 
-    override fun getItemId(position: Int): Long {
-        return themeList[position].toLong()
-    }
 
-    override fun getCount(): Int {
-        return themeList.size
-    }
+    override fun getItemId(position: Int) = themeList[position].toLong()
+
+    override fun getCount() = themeList.size
 
     fun setCheckItem(checkItemPos: Int) {
         checkItem = checkItemPos
