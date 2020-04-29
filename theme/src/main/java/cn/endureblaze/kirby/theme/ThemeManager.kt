@@ -7,16 +7,17 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.widget.GridView
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.edit
+import kotlin.reflect.KFunction0
 
 /**
  * 主题的管理器
  * @param context 传入一个上下文用于初始化
  */
-class ThemeManager (context: Context) {
+class ThemeManager(context: Context) {
 
     private var themeContext: Context = context
     private var themeShard: SharedPreferences = themeContext.getSharedPreferences(FILE_NAME, 0)
-    private var themeShardEdit: SharedPreferences.Editor = themeShard.edit()
 
     companion object {
         const val FILE_NAME: String = "theme"
@@ -44,7 +45,7 @@ class ThemeManager (context: Context) {
      * 打开一个用于切换主题的对话框
      * @param callback 用于切换完毕后执行的一个函数，不能有返回值
      */
-    fun showSwitchDialog(callback: Unit) {
+    fun showSwitchDialog(callback: () -> Unit) {
         val itemSelected: Int = currThemeId
         val switchDialog = AlertDialog.Builder(themeContext)
         switchDialog.setTitle("Theme")
@@ -60,7 +61,7 @@ class ThemeManager (context: Context) {
             dialog.dismiss()
             if (itemSelected != position) {
                 switchTheme(position)
-                callback
+                callback()
             }
         }
     }
@@ -87,7 +88,7 @@ class ThemeManager (context: Context) {
         }
     }
 
-    private fun switchTheme(theme_id: Int) = themeShardEdit.putInt("themeId", theme_id).apply()
+    private fun switchTheme(theme_id: Int) = themeShard.edit { putInt("themeId", theme_id) }
 
     /**
      * 获取主题的一些颜色

@@ -14,29 +14,26 @@ import androidx.recyclerview.widget.RecyclerView
 import cn.endureblaze.kirby.Kirby
 import cn.endureblaze.kirby.R
 import cn.endureblaze.kirby.databinding.ItemConsoleBinding
-import cn.endureblaze.kirby.res.dataclass.Console
+import cn.endureblaze.kirby.res.dataclass.ResItem
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.item_console.view.*
 
-class ConsoleAdapter constructor(private val consoleList: List<Console>) :
+class ConsoleAdapter (private val consoleList: Array<ResItem>) :
     RecyclerView.Adapter<ConsoleAdapter.ViewHolder>() {
 
     private var mContext: Context? = null
 
     inner class ViewHolder(itemConsoleBinding: ItemConsoleBinding) : RecyclerView.ViewHolder(itemConsoleBinding.root) {
         val itemConsole: View = itemConsoleBinding.root
-        val linearLayout: LinearLayout = itemConsole.LinearLayout
-        val cardview: CardView = itemConsole.cardview
-        val consoleImage: ImageView = itemConsole.console_image
-        val consoleName: TextView = itemConsole.console_text
+        val linearLayout: LinearLayout = itemConsoleBinding.LinearLayout
+        val cardview: CardView = itemConsoleBinding.cardview
+        val consoleImage: ImageView = itemConsoleBinding.consoleImage
+        val consoleName: TextView = itemConsoleBinding.consoleText
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         if (mContext == null) {
             mContext = parent.context
         }
-        //val view = LayoutInflater.from(mContext).inflate(R.layout.item_console, parent, false)
-        //val holder = ViewHolder(view)
         val itemConsoleBinding = ItemConsoleBinding.inflate(LayoutInflater.from(mContext),parent,false)
         val holder = ViewHolder(itemConsoleBinding)
         holder.linearLayout.setOnClickListener {

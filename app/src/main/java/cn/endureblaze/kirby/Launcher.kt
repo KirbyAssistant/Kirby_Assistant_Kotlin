@@ -19,14 +19,11 @@ class Launcher : AppCompatActivity() {
         window.statusBarColor = Color.TRANSPARENT
         window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
-
         jump2main()
     }
 
     private fun jump2main() {
-        val intent = Intent()
-        intent.setClass(this, MainActivity::class.java)
-        startActivity(intent)
+        MainActivity.actionStart(this)
         finish()
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }

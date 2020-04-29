@@ -2,6 +2,7 @@ package cn.endureblaze.kirby.res
 
 import android.view.LayoutInflater
 import android.view.View
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cn.endureblaze.kirby.R
@@ -12,52 +13,42 @@ import cn.endureblaze.kirby.databinding.ViewpagerCheatcodeBinding
 import cn.endureblaze.kirby.databinding.ViewpagerConsoleBinding
 import cn.endureblaze.kirby.databinding.ViewpagerEmulatorBinding
 import cn.endureblaze.kirby.res.adapter.ConsoleAdapter
-import cn.endureblaze.kirby.res.dataclass.Console
-import cn.endureblaze.kirby.res.dataclass.Emulator
+import cn.endureblaze.kirby.res.adapter.EmulatorAdapter
+import cn.endureblaze.kirby.res.viewmodel.ResViewModel
+import cn.endureblaze.kirby.utils.ActManager
 import com.google.android.material.tabs.TabLayout
 
-class MainResFragment : BaseFragment<MainResFragmentBinding>(R.layout.main_res_fragment) {
-
-    /**
-     * mainResPagerTitleList 页面标题列表
-     * mainResPagerViewList 页面 View 列表
-     */
-    private var mainResPagerTitleList: MutableList<String> = ArrayList()
-    private var mainResPagerViewList: MutableList<View> = ArrayList()
+class MainResFragment : BaseFragment<MainResFragmentBinding, ResViewModel>(R.layout.main_res_fragment) {
 
     private lateinit var rlvConsole: RecyclerView
     private lateinit var rlvEmulator: RecyclerView
     private lateinit var rlvCheatCode: RecyclerView
 
-    private var consoleList: MutableList<Console> = ArrayList()
-    private var emulatorList: MutableList<Emulator> = ArrayList()
+    override fun initBinding(view: View): MainResFragmentBinding = MainResFragmentBinding.bind(view)
 
-    override fun initBinding(view: View): MainResFragmentBinding {
-        return MainResFragmentBinding.bind(view)
-    }
+    override fun initViewModel(): ResViewModel = ViewModelProvider(this)[ResViewModel::class.java]
 
     override fun initView() {
-        val resPagerAdapter = ResPagerAdapter(mainResPagerTitleList, mainResPagerViewList)
-
         val mViewPager = binding.mainResViewpager
         val mTabLayout = binding.mainResTablayout
         val inflater = LayoutInflater.from(activity)
 
-        //创建页卡视图对象
         val consolePagerBinding = ViewpagerConsoleBinding.inflate(inflater)
         val emulatorPagerBinding = ViewpagerEmulatorBinding.inflate(inflater)
         val cheatCodePagerBinding = ViewpagerCheatcodeBinding.inflate(inflater)
 
-        //把页卡加入列表
-        mainResPagerViewList.add(consolePagerBinding.root)
-        mainResPagerViewList.add(emulatorPagerBinding.root)
-        mainResPagerViewList.add(cheatCodePagerBinding.root)
+        val mainResPagerTitleList: Array<String> = arrayOf(
+            ActManager.currentActivity.resources.getString(R.string.tab_game),
+            ActManager.currentActivity.resources.getString(R.string.tab_emulator),
+            ActManager.currentActivity.resources.getString(R.string.tab_emulator)
+        )
+        val mainResPagerViewList: Array<View> = arrayOf(
+            consolePagerBinding.root,
+            emulatorPagerBinding.root,
+            cheatCodePagerBinding.root
+        )
 
-        //添加对应的标题
-        activity?.resources?.getString(R.string.tab_game)?.let { mainResPagerTitleList.add(it) }
-        activity?.resources?.getString(R.string.tab_emulator)?.let { mainResPagerTitleList.add(it) }
-        activity?.resources?.getString(R.string.tab_cheatcode)?.let { mainResPagerTitleList.add(it) }
-
+        val resPagerAdapter = ResPagerAdapter(mainResPagerTitleList, mainResPagerViewList)
 
         //从页卡视图中拿出列表
         rlvConsole = consolePagerBinding.consoleList
@@ -73,15 +64,17 @@ class MainResFragment : BaseFragment<MainResFragmentBinding>(R.layout.main_res_f
 
     override fun loadDate() {
         //主机列表配置
-        ResourceData.initConsoleData(consoleList)
         val layoutManagerConsole = GridLayoutManager(activity, 1)
-        val consoleAdapter = ConsoleAdapter(consoleList)
+        val consoleAdapter = ConsoleAdapter(viewModel.consoleList)
 
         rlvConsole.layoutManager = layoutManagerConsole
         rlvConsole.adapter = consoleAdapter
 
         //模拟器列表
-        ResourceData.initEmulatorData(emulatorList)
         val layoutManagerEmulator = GridLayoutManager(activity, 3)
+        val emulatorAdapter = EmulatorAdapter(viewModel.emulatorList)
+
+        rlvEmulator.layoutManager = layoutManagerEmulator
+        rlvEmulator.adapter = emulatorAdapter
     }
 }

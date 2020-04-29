@@ -8,7 +8,7 @@ import cn.endureblaze.kirby.base.BaseFragment
 class ViewPagerAdapter constructor (
     fragmentManager: FragmentManager,
     behavior: Int,
-    private val fragmentList: List<BaseFragment<*>>
+    private val fragmentList: List<BaseFragment<*,*>>
 ) :
     FragmentPagerAdapter(fragmentManager, behavior) {
 

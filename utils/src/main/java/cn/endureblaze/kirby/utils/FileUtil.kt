@@ -143,16 +143,16 @@ object FileUtil {
         }
         fileSizeStr = when {
             fileSize < 1024 -> {
-                df.format(fileSize as Double) + "B"
+                "${df.format(fileSize.toDouble())} B"
             }
             fileSize < 1048576 -> {
-                df.format(fileSize.toDouble() / 1024) + "KB"
+                "${df.format(fileSize.toDouble() / 1024)} KB"
             }
             fileSize < 1073741824 -> {
-                df.format(fileSize.toDouble() / 1048576) + "MB"
+                "${df.format(fileSize.toDouble() / 1048576)} MB"
             }
             else -> {
-                df.format(fileSize.toDouble() / 1073741824) + "GB"
+                "${df.format(fileSize.toDouble() / 1073741824)} GB"
             }
         }
         return fileSizeStr

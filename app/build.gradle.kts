@@ -55,11 +55,13 @@ dependencies {
     //Gilde
     implementation(Deps.Gilde.gilde)
     annotationProcessor(Deps.Gilde.compiler)
+    implementation("com.github.EndureBlaze:GlideCache:1.2")
     //androidx
     implementation("androidx.core:core-ktx:1.2.0")
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation("androidx.appcompat:appcompat:1.1.0")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.recyclerview:recyclerview:1.1.0")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.preference:preference:1.1.1")

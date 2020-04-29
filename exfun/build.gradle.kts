@@ -1,7 +1,6 @@
-plugins{
+plugins {
     id("com.android.library")
     kotlin("android")
-    kotlin("kapt")
     kotlin("android.extensions")
 }
 
@@ -14,30 +13,17 @@ android {
         targetSdkVersion(Build.targetSdk)
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
 
-    viewBinding {
-        isEnabled = true
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 }
 
 dependencies {
@@ -46,7 +32,6 @@ dependencies {
 
     implementation ("androidx.appcompat:appcompat:1.1.0")
     implementation ("androidx.core:core-ktx:1.2.0")
-    implementation ("com.google.android.material:material:1.2.0-alpha06")
     //test
     testImplementation(Deps.Test.junit)
     androidTestImplementation(Deps.Test.runner)

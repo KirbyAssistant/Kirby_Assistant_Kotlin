@@ -6,7 +6,7 @@ object Deps {
 
     object AdnroidX {
         const val core_ktx = "androidx.core:core-ktx:${Versions.core_ktx}"
-        const val constraintlayout ="androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}"
+        const val constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}"
         const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
         const val legacy = "androidx.legacy:legacy-support-v4:${Versions.legacy}"
         const val recyclerview = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
@@ -43,6 +43,7 @@ object Deps {
             maven { setUrl("https://maven.aliyun.com/repository/google") }
             maven { setUrl("https://maven.aliyun.com/repository/jcenter") }
             maven { setUrl("https://raw.github.com/bmob/bmob-android-sdk/master") }
+            maven { setUrl("https://jitpack.io") }
             //mavenCentral()
         }
     }
