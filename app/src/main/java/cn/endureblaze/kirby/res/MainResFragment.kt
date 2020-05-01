@@ -12,6 +12,7 @@ import cn.endureblaze.kirby.databinding.MainResFragmentBinding
 import cn.endureblaze.kirby.databinding.ViewpagerCheatcodeBinding
 import cn.endureblaze.kirby.databinding.ViewpagerConsoleBinding
 import cn.endureblaze.kirby.databinding.ViewpagerEmulatorBinding
+import cn.endureblaze.kirby.res.adapter.CheatcodeGameAdapter
 import cn.endureblaze.kirby.res.adapter.ConsoleAdapter
 import cn.endureblaze.kirby.res.adapter.EmulatorAdapter
 import cn.endureblaze.kirby.res.viewmodel.ResViewModel
@@ -22,7 +23,7 @@ class MainResFragment : BaseFragment<MainResFragmentBinding, ResViewModel>(R.lay
 
     private lateinit var rlvConsole: RecyclerView
     private lateinit var rlvEmulator: RecyclerView
-    private lateinit var rlvCheatCode: RecyclerView
+    private lateinit var rlvCheatcode: RecyclerView
 
     override fun initBinding(view: View): MainResFragmentBinding = MainResFragmentBinding.bind(view)
 
@@ -37,12 +38,12 @@ class MainResFragment : BaseFragment<MainResFragmentBinding, ResViewModel>(R.lay
         val emulatorPagerBinding = ViewpagerEmulatorBinding.inflate(inflater)
         val cheatCodePagerBinding = ViewpagerCheatcodeBinding.inflate(inflater)
 
-        val mainResPagerTitleList: Array<String> = arrayOf(
+        val mainResPagerTitleList: List<String> = listOf(
             ActManager.currentActivity.resources.getString(R.string.tab_game),
             ActManager.currentActivity.resources.getString(R.string.tab_emulator),
             ActManager.currentActivity.resources.getString(R.string.tab_emulator)
         )
-        val mainResPagerViewList: Array<View> = arrayOf(
+        val mainResPagerViewList: List<View> = listOf(
             consolePagerBinding.root,
             emulatorPagerBinding.root,
             cheatCodePagerBinding.root
@@ -53,7 +54,7 @@ class MainResFragment : BaseFragment<MainResFragmentBinding, ResViewModel>(R.lay
         //从页卡视图中拿出列表
         rlvConsole = consolePagerBinding.consoleList
         rlvEmulator = emulatorPagerBinding.emulatorList
-        rlvCheatCode = cheatCodePagerBinding.cheatcodeList
+        rlvCheatcode = cheatCodePagerBinding.cheatcodeList
 
         mTabLayout.tabMode = TabLayout.MODE_FIXED
         mTabLayout.addTab(mTabLayout.newTab().setText(mainResPagerTitleList[0]))
@@ -76,5 +77,12 @@ class MainResFragment : BaseFragment<MainResFragmentBinding, ResViewModel>(R.lay
 
         rlvEmulator.layoutManager = layoutManagerEmulator
         rlvEmulator.adapter = emulatorAdapter
+
+        //金手指游戏列表
+        val layoutManagerCheatcodeGame = GridLayoutManager(activity,1)
+        val cheatCodeGameAdapter = CheatcodeGameAdapter(viewModel.cheatcodeGameList)
+
+        rlvCheatcode.layoutManager = layoutManagerCheatcodeGame
+        rlvCheatcode.adapter = cheatCodeGameAdapter
     }
 }

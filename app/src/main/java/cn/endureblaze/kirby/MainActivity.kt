@@ -19,16 +19,6 @@ class MainActivity : BaseActivity() {
 
     private lateinit var viewModel: MainViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
-        viewModel.binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(viewModel.binding.root)
-        initToolbar()
-        initFragmentPager()
-        initBottomBar()
-    }
-
     companion object {
         /**
          * 静态启动 MainActivity 的方法
@@ -38,6 +28,15 @@ class MainActivity : BaseActivity() {
             val intent = Intent(context, MainActivity::class.java)
             context.startActivity(intent)
         }
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        viewModel.binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(viewModel.binding.root)
+        initToolbar()
+        initFragmentPager()
+        initBottomBar()
     }
 
     /**

@@ -14,7 +14,7 @@ import cn.endureblaze.kirby.res.dataclass.ResItem
 import cn.endureblaze.kirby.utils.ActManager
 import com.bumptech.glide.Glide
 
-class EmulatorAdapter(private val emulatorList: Array<ResItem>) :
+class EmulatorAdapter(private val emulatorList: List<ResItem>) :
     RecyclerView.Adapter<EmulatorAdapter.ViewHolder>() {
 
     private var mContext: Context? = null
@@ -22,7 +22,6 @@ class EmulatorAdapter(private val emulatorList: Array<ResItem>) :
     inner class ViewHolder(itemEmulatorBinding: ItemEmulatorBinding) :
         RecyclerView.ViewHolder(itemEmulatorBinding.root) {
         val itemEmulator = itemEmulatorBinding.root
-        val linearLayout = itemEmulatorBinding.LinearLayout
         val emulatorImage = itemEmulatorBinding.emulatorImage
         val blurImage = itemEmulatorBinding.blurImage
         val emulatorText = itemEmulatorBinding.emulatorText

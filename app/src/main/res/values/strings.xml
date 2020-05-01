@@ -141,31 +141,49 @@
     <string name="setting_contributor_title">贡献者</string>
     <string name="setting_contributor_domain_name_title">域名特别贡献</string>
     <string name="setting_contributor_domain_name_summary">访问 @邵旭东 的主页</string>
-    <string name="setting_contributor_domain_name_link" translatable="false">aHR0cDovL3d3dy5zaGFveHVkb25nLmNvbS8=</string>
+    <string name="setting_contributor_domain_name_link" translatable="false">aHR0cDovL3d3dy5zaGFveHVkb25nLmNvbS8=
+    </string>
     <string name="setting_contributor_program_title">程序特别贡献</string>
     <string name="setting_contributor_program_summary">Github @lxfly2000</string>
-    <string name="setting_contributor_program_link" translatable="false">aHR0cHM6Ly9naXRodWIuY29tL2x4Zmx5MjAwMA==</string>
+    <string name="setting_contributor_program_link" translatable="false">aHR0cHM6Ly9naXRodWIuY29tL2x4Zmx5MjAwMA==
+    </string>
     <string name="setting_contributor_translation_tw_title">繁体中文翻译</string>
     <string name="setting_contributor_translation_tw_summary">Github @longxk2017</string>
-    <string name="setting_contributor_translation_tw_link" translatable="false">aHR0cHM6Ly9naXRodWIuY29tL2xvbmd4azIwMTc=</string>
+    <string name="setting_contributor_translation_tw_link" translatable="false">
+        aHR0cHM6Ly9naXRodWIuY29tL2xvbmd4azIwMTc=
+    </string>
     <string name="setting_contributor_translation_en_title">英语翻译</string>
     <string name="setting_contributor_translation_en_1_summary">百度贴吧 @难难难550</string>
-    <string name="setting_contributor_translation_en_1_link" translatable="false">aHR0cHM6Ly90aWViYS5iYWlkdS5jb20vaG9tZS9tYWluP3VuPemavumavumavjU1MA==</string>
+    <string name="setting_contributor_translation_en_1_link" translatable="false">
+        aHR0cHM6Ly90aWViYS5iYWlkdS5jb20vaG9tZS9tYWluP3VuPemavumavumavjU1MA==
+    </string>
     <string name="setting_contributor_translation_en_2_summary">百度贴吧 @光之耀西</string>
-    <string name="setting_contributor_translation_en_2_link" translatable="false">aHR0cDovL3RpZWJhLmJhaWR1LmNvbS9ob21lL21haW4/dW495YWJ5LmL6ICA6KW/</string>
+    <string name="setting_contributor_translation_en_2_link" translatable="false">
+        aHR0cDovL3RpZWJhLmJhaWR1LmNvbS9ob21lL21haW4/dW495YWJ5LmL6ICA6KW/
+    </string>
     <string name="setting_contributor_draw_icon_title">图标绘制</string>
     <string name="setting_contributor_draw_icon_1_summary">酷安 @hk流星</string>
-    <string name="setting_contributor_draw_icon_1_link" translatable="false">aHR0cDovL3d3dy5jb29sYXBrLmNvbS91LzU1NTg4Mw==</string>
+    <string name="setting_contributor_draw_icon_1_link" translatable="false">
+        aHR0cDovL3d3dy5jb29sYXBrLmNvbS91LzU1NTg4Mw==
+    </string>
     <string name="setting_contributor_draw_icon_2_summary">酷安 @Markuss</string>
-    <string name="setting_contributor_draw_icon_2_link" translatable="false">aHR0cDovL3d3dy5jb29sYXBrLmNvbS91LzUyOTcxOA==</string>
+    <string name="setting_contributor_draw_icon_2_link" translatable="false">
+        aHR0cDovL3d3dy5jb29sYXBrLmNvbS91LzUyOTcxOA==
+    </string>
     <string name="setting_contributor_draw_icon_3_summary">百度贴吧 @★☆小伊布☆★</string>
-    <string name="setting_contributor_draw_icon_3_link" translatable="false">aHR0cHM6Ly90aWViYS5iYWlkdS5jb20vaG9tZS9tYWluP3VuPeKYheKYhuWwj+S8iuW4g+KYhuKYhQ==</string>
+    <string name="setting_contributor_draw_icon_3_link" translatable="false">
+        aHR0cHM6Ly90aWViYS5iYWlkdS5jb20vaG9tZS9tYWluP3VuPeKYheKYhuWwj+S8iuW4g+KYhuKYhQ==
+    </string>
     <string name="setting_contributor_video_author_title">视频作者</string>
     <string name="setting_contributor_video_author_summary">哔哩哔哩动画 @虚影无华</string>
-    <string name="setting_contributor_video_author_link" translatable="false">aHR0cDovL3NwYWNlLmJpbGliaWxpLmNvbS8xMzAwMTI1Mg==</string>
+    <string name="setting_contributor_video_author_link" translatable="false">
+        aHR0cDovL3NwYWNlLmJpbGliaWxpLmNvbS8xMzAwMTI1Mg==
+    </string>
     <string name="setting_contributor_writer_help_faq_title">FAQ 编写</string>
     <string name="setting_contributor_writer_help_faq_summary">酷安 @塔林狐</string>
-    <string name="setting_contributor_writer_help_faq_link" translatable="false">aHR0cDovL3d3dy5jb29sYXBrLmNvbS91LzExNTc3NzQ=</string>
+    <string name="setting_contributor_writer_help_faq_link" translatable="false">
+        aHR0cDovL3d3dy5jb29sYXBrLmNvbS91LzExNTc3NzQ=
+    </string>
     <!--结束————设置-->
 
     <!--对话框用词-->

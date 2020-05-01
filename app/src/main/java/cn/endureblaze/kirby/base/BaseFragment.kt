@@ -72,7 +72,9 @@ abstract class BaseFragment<T : ViewBinding, B : ViewModel>(private val layoutId
      */
     abstract fun loadDate()
 
-    //释放数据
+    /**
+     * 释放数据
+     */
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()

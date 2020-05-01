@@ -4,7 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 
-class ResPagerAdapter(private val titleList: Array<String>, private val viewList: Array<View>) : PagerAdapter() {
+class ResPagerAdapter(private val titleList: List<String>, private val viewList: List<View>) : PagerAdapter() {
 
     override fun isViewFromObject(view: View, `object`: Any) = view == `object`
 

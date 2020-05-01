@@ -1,29 +1,25 @@
 package cn.endureblaze.kirby.res.viewmodel
 
-import android.view.View
 import androidx.lifecycle.ViewModel
 import cn.endureblaze.kirby.R
-import cn.endureblaze.kirby.databinding.ViewpagerCheatcodeBinding
-import cn.endureblaze.kirby.databinding.ViewpagerConsoleBinding
-import cn.endureblaze.kirby.databinding.ViewpagerEmulatorBinding
 import cn.endureblaze.kirby.res.dataclass.ResItem
 import cn.endureblaze.kirby.utils.ActManager
 
 class ResViewModel : ViewModel() {
 
-    var consoleList = arrayOf(
-        ResItem("gba", "https://api.endureblaze.cn/ka_image/consose/gba.png", "gba"),
-        ResItem("sfc", "https://api.endureblaze.cn/ka_image/consose/sfc.png", "sfc"),
-        ResItem("n64", "https://api.endureblaze.cn/ka_image/consose/n64.png", "n64"),
-        ResItem("ngc", "https://api.endureblaze.cn/ka_image/consose/ngc.png", "ngc"),
-        ResItem("wii", "https://api.endureblaze.cn/ka_image/consose/wii.png", "wii"),
-        ResItem("nds", "https://api.endureblaze.cn/ka_image/consose/nds.png", "nds"),
-        ResItem("gb", "https://api.endureblaze.cn/ka_image/consose/gb.png", "gb"),
-        ResItem("gbc", "https://api.endureblaze.cn/ka_image/consose/gbc.png", "gbc"),
-        ResItem("fc", "https://api.endureblaze.cn/ka_image/consose/fc.png", "fc")
+    var consoleList = listOf(
+        ResItem("GBA", "https://api.endureblaze.cn/ka_image/consose/gba.png", "gba"),
+        ResItem("SFC", "https://api.endureblaze.cn/ka_image/consose/sfc.png", "sfc"),
+        ResItem("N64", "https://api.endureblaze.cn/ka_image/consose/n64.png", "n64"),
+        ResItem("NGC", "https://api.endureblaze.cn/ka_image/consose/ngc.png", "ngc"),
+        ResItem("Wii", "https://api.endureblaze.cn/ka_image/consose/wii.png", "wii"),
+        ResItem("NDS", "https://api.endureblaze.cn/ka_image/consose/nds.png", "nds"),
+        ResItem("GB", "https://api.endureblaze.cn/ka_image/consose/gb.png", "gb"),
+        ResItem("GBC", "https://api.endureblaze.cn/ka_image/consose/gbc.png", "gbc"),
+        ResItem("FC", "https://api.endureblaze.cn/ka_image/consose/fc.png", "fc")
     )
 
-    var emulatorList = arrayOf(
+    var emulatorList = listOf(
         ResItem(
             "GBA $emulatorText My Boy!",
             "https://api.endureblaze.cn/ka_image/moniqi/moniqi_gba.png",
@@ -57,7 +53,7 @@ class ResViewModel : ViewModel() {
         ResItem("FC $emulatorText NES.emu", "https://api.endureblaze.cn/ka_image/moniqi/moniqi_fc.png", "emulator_fc")
     )
 
-    val cheatCodeGameData = arrayOf(
+    val cheatcodeGameList = listOf(
         ResItem("星之卡比 梦之泉物语", "https://api.endureblaze.cn/ka_image/game/mengzhiquan.jpg", "fc_mzq"),
         ResItem("星之卡比 梦之泉DX", "https://api.endureblaze.cn/ka_image/game/mengzhiquandx.jpg", "gba_mzqdx"),
         ResItem("星之卡比 镜之大迷宫", "https://api.endureblaze.cn/ka_image/game/jingmi.jpg", "gba_jm")

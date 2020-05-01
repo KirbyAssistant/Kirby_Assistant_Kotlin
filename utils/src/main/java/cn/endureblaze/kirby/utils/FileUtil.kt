@@ -9,6 +9,16 @@ import java.util.*
 object FileUtil {
 
     /**
+     * 大小的类型
+     */
+    object FileSizeType {
+        const val B: Int = 1
+        const val KB: Int = 2
+        const val MB: Int = 3
+        const val GB: Int = 4
+    }
+
+    /**
      * 给定路径和文件名创建文件
      * @param filePath 路径名称
      * @param fileName 文件名
