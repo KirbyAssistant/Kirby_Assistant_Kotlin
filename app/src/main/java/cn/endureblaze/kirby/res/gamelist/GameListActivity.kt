@@ -57,19 +57,12 @@ class GameListActivity : BaseActivity() {
      */
     private fun initGameListData() {
         val layoutManager = GridLayoutManager(this, 1)
-        val adapter: GameListAdapter = when (intent.getStringExtra(consoleTypeTag)) {
-            "gba" -> GameListAdapter(viewModel.gbaGameList)
-            "gb" -> GameListAdapter(viewModel.gbGameList)
-            "gbc" -> GameListAdapter(viewModel.gbcGameList)
-            "sfc" -> GameListAdapter(viewModel.sfcGameList)
-            "n64" -> GameListAdapter(viewModel.n64GameList)
-            "ngc" -> GameListAdapter(viewModel.ngcGameList)
-            "wii" -> GameListAdapter(viewModel.wiiGameList)
-            "fc" -> GameListAdapter(viewModel.fcGameList)
-            else -> GameListAdapter(listOf())
+        val tag = intent.getStringExtra(consoleTypeTag)
+        tag?.let {
+            val adapter = GameListAdapter(viewModel.getGameList(it), viewModel)
+            viewModel.binding.gameList.layoutManager = layoutManager
+            viewModel.binding.gameList.adapter = adapter
         }
 
-        viewModel.binding.gameList.layoutManager = layoutManager
-        viewModel.binding.gameList.adapter = adapter
     }
 }

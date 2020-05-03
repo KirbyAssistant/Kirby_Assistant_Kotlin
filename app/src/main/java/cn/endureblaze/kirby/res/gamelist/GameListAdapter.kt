@@ -9,12 +9,15 @@ import androidx.recyclerview.widget.RecyclerView
 import cn.ednureblaze.glidecache.GlideCache
 import cn.endureblaze.kirby.Kirby
 import cn.endureblaze.kirby.R
+import cn.endureblaze.kirby.databinding.DialogGameDataShowBinding
 import cn.endureblaze.kirby.databinding.ItemConsoleBinding
 import cn.endureblaze.kirby.res.dataclass.ResItem
 import cn.endureblaze.kirby.utils.ActManager
+import cn.endureblaze.kirby.utils.ListViewUtil
 import com.bumptech.glide.Glide
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
-class GameListAdapter(private val gameList: List<ResItem>) :
+class GameListAdapter(private val gameList: List<ResItem>,private val viewModel:GameListViewModel) :
     RecyclerView.Adapter<GameListAdapter.ViewHolder>() {
 
     private var mContext: Context? = null
@@ -34,7 +37,16 @@ class GameListAdapter(private val gameList: List<ResItem>) :
         val itemGameListBinding = ItemConsoleBinding.inflate(LayoutInflater.from(mContext), parent, false)
         val holder = ViewHolder(itemGameListBinding)
         holder.linearLayout.setOnClickListener {
-
+            val pos = holder.adapterPosition
+            val gameList = gameList[pos]
+            val dialog = mContext?.let { it1 -> BottomSheetDialog(it1) }
+            val dialogGameDataShowBinding = DialogGameDataShowBinding.inflate(LayoutInflater.from(mContext),parent,false)
+            val adapter = mContext?.let { GameDownloadAdapter(it,viewModel.getGameData(gameList.tag)) }
+            dialogGameDataShowBinding.gameVersion.adapter = adapter
+            ListViewUtil.setListViewHeightBasedOnChildren(dialogGameDataShowBinding.gameVersion)
+            dialog?.setContentView(dialogGameDataShowBinding.root)
+            GlideCache.setNormalImageViaGlideCache(ActManager.currentActivity,dialogGameDataShowBinding.gameImage,gameList.imageUrl)
+            dialog?.show()
         }
         return holder
     }
