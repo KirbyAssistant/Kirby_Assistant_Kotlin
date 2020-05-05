@@ -10,6 +10,7 @@ import cn.ednureblaze.glidecache.GlideCache
 import cn.endureblaze.kirby.Kirby
 import cn.endureblaze.kirby.R
 import cn.endureblaze.kirby.databinding.ItemCheatcodeGameBinding
+import cn.endureblaze.kirby.res.cheatcode.CheatCodeActivity
 import cn.endureblaze.kirby.res.dataclass.ResItem
 import cn.endureblaze.kirby.utils.ActManager
 import com.bumptech.glide.Glide
@@ -22,6 +23,7 @@ class CheatcodeGameAdapter(private val cheatCodeGameList: List<ResItem>) :
     inner class ViewHolder(cheatcodeGameBinding: ItemCheatcodeGameBinding) :
         RecyclerView.ViewHolder(cheatcodeGameBinding.root) {
         val itemCheatcodeGame = cheatcodeGameBinding.root
+        val linearLayout = cheatcodeGameBinding.LinearLayout
         val cheatcodeImage = cheatcodeGameBinding.cheatcodeImage
         val blurImage = cheatcodeGameBinding.blurImage
         val cheatcodeText = cheatcodeGameBinding.cheatcodeText
@@ -33,6 +35,10 @@ class CheatcodeGameAdapter(private val cheatCodeGameList: List<ResItem>) :
         }
         val itemCheatcodeGameBinding = ItemCheatcodeGameBinding.inflate(LayoutInflater.from(mContext), parent, false)
         val holder = ViewHolder(itemCheatcodeGameBinding)
+
+        holder.linearLayout.setOnClickListener {
+            CheatCodeActivity.actionStart(mContext!!,cheatCodeGameList[holder.adapterPosition].tag)
+        }
 
         return holder
     }

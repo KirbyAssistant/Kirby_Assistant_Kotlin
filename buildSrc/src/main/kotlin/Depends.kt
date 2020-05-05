@@ -42,7 +42,7 @@ object Deps {
             maven { setUrl("https://jitpack.io") }
             maven { setUrl("https://maven.aliyun.com/repository/google") }
             maven { setUrl("https://maven.aliyun.com/repository/jcenter") }
-            maven { setUrl("https://raw.github.com/bmob/bmob-android-sdk/master") }
+            maven { setUrl("https://dl.bintray.com/chaozhouzhang/maven") }
             maven { setUrl("https://jitpack.io") }
             //mavenCentral()
         }

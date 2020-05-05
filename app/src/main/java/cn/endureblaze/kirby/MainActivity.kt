@@ -12,8 +12,10 @@ import cn.endureblaze.kirby.adapter.ViewPagerAdapter
 import cn.endureblaze.kirby.base.BaseActivity
 import cn.endureblaze.kirby.databinding.ActivityMainBinding
 import cn.endureblaze.kirby.databinding.LayoutToolbarBinding
-import cn.endureblaze.kirby.res.MainResFragment
+import cn.endureblaze.kirby.res.ResFragment
+import cn.endureblaze.kirby.setting.SettingsActivity
 import cn.endureblaze.kirby.theme.ThemeManager
+import cn.endureblaze.kirby.video.VideoFragment
 
 class MainActivity : BaseActivity() {
 
@@ -29,6 +31,7 @@ class MainActivity : BaseActivity() {
             context.startActivity(intent)
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
@@ -53,6 +56,7 @@ class MainActivity : BaseActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.theme -> ThemeManager(this).showSwitchDialog(::reloadMain)
+            R.id.setting -> SettingsActivity.actionStart(this)
         }
         return true
     }
@@ -70,10 +74,14 @@ class MainActivity : BaseActivity() {
      * 初始化 Fragment
      */
     private fun initFragmentPager() {
-        val mainResFragment = MainResFragment()
+        val resFragment = ResFragment()
+        val videoFragment = VideoFragment()
 
-        viewModel.fragmentList.add(mainResFragment)
+        viewModel.fragmentList.add(resFragment)
         viewModel.pagerTitleList.add(resources.getString(R.string.title_res))
+
+        viewModel.fragmentList.add(videoFragment)
+        viewModel.pagerTitleList.add(resources.getString(R.string.title_video))
 
         viewModel.mainFragmentViewPager = viewModel.binding.mainFragmentViewpager
         viewModel.mainFragmentViewPager.adapter = ViewPagerAdapter(
@@ -96,6 +104,11 @@ class MainActivity : BaseActivity() {
                 R.id.res -> {
                     viewModel.mainFragmentViewPager.currentItem = 0
                     viewModel.toolbarBinding.toolbar.subtitle = viewModel.pagerTitleList[0]
+                }
+
+                R.id.video ->{
+                    viewModel.mainFragmentViewPager.currentItem = 1
+                    viewModel.toolbarBinding.toolbar.subtitle = viewModel.pagerTitleList[1]
                 }
             }
 

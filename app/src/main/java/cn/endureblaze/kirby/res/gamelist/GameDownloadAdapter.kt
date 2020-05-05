@@ -1,6 +1,8 @@
 package cn.endureblaze.kirby.res.gamelist
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,7 +32,10 @@ class GameDownloadAdapter(
         viewHolder.versionTv.text = version
 
         viewHolder.download.setOnClickListener {
-            ToastUtil.show(version)
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.addCategory(Intent.CATEGORY_BROWSABLE);
+            intent.data = Uri.parse(gameData.urlList[position])
+            context.startActivity(intent)
         }
 
         return view

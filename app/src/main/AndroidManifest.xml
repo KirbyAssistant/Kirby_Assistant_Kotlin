@@ -20,6 +20,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup">
+        <activity android:name=".res.cheatcode.CheatCodeActivity">
+        </activity>
         <activity android:name=".res.gamelist.GameListActivity">
         </activity>
         <activity
@@ -33,6 +35,13 @@
         </activity>
         <activity android:name=".MainActivity">
         </activity>
+        <activity android:name=".setting.SettingsActivity"/>
+
+        <provider
+                android:name="cn.bmob.v3.util.BmobContentProvider"
+                android:authorities="cn.endureblaze.kirby.BmobContentProvider"
+                android:exported="false"
+                tools:ignore="ExportedContentProvider"/>
     </application>
 
 </manifest>

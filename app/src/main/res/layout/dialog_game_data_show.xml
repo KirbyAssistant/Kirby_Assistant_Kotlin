@@ -6,24 +6,39 @@
         android:layout_height="wrap_content"
         android:background="?color_windows_background">
 
-    <RelativeLayout
+    <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp">
+            android:layout_height="wrap_content">
 
         <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:ignore="ContentDescription"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/game_image"/>
-
-        <ListView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/game_image"
-                android:id="@+id/game_version"/>
+                android:layout_height="match_parent"
+                tools:ignore="ContentDescription"
+                android:id="@+id/blur_image"/>
 
-    </RelativeLayout>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="ContentDescription"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/game_image"/>
+
+            <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/game_image"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:id="@+id/game_version"
+                    android:divider="@null"/>
+
+        </RelativeLayout>
+    </FrameLayout>
+
 
 </androidx.core.widget.NestedScrollView>

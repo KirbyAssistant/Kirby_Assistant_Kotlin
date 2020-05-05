@@ -13,7 +13,6 @@
     </scriptDefinition>
     <scriptDefinition className="org.jetbrains.kotlin.mainKts.MainKtsScript" definitionName="MainKtsScript">
       <order>3</order>
-      <isEnabled>false</isEnabled>
     </scriptDefinition>
     <scriptDefinition className="org.jetbrains.kotlin.idea.core.script.StandardIdeScriptDefinition" definitionName="Kotlin Script">
       <order>4</order>

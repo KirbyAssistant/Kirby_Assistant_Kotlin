@@ -42,10 +42,12 @@ class GameListAdapter(private val gameList: List<ResItem>,private val viewModel:
             val dialog = mContext?.let { it1 -> BottomSheetDialog(it1) }
             val dialogGameDataShowBinding = DialogGameDataShowBinding.inflate(LayoutInflater.from(mContext),parent,false)
             val adapter = mContext?.let { GameDownloadAdapter(it,viewModel.getGameData(gameList.tag)) }
+
             dialogGameDataShowBinding.gameVersion.adapter = adapter
             ListViewUtil.setListViewHeightBasedOnChildren(dialogGameDataShowBinding.gameVersion)
             dialog?.setContentView(dialogGameDataShowBinding.root)
             GlideCache.setNormalImageViaGlideCache(ActManager.currentActivity,dialogGameDataShowBinding.gameImage,gameList.imageUrl)
+            GlideCache.setBlurImageViaGlideCache(ActManager.currentActivity,dialogGameDataShowBinding.blurImage,gameList.imageUrl,"8")
             dialog?.show()
         }
         return holder

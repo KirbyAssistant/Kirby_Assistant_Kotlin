@@ -48,8 +48,17 @@ dependencies {
 
     implementation(Deps.Kotlin.stdlib)
 
-    //implementation("cn.bmob.android:bmob-sdk:3.7.4")
+    implementation("cn.bmob.android:bmob-sdk:3.7.8")
 
+    implementation("io.reactivex.rxjava2:rxjava:2.2.9")
+    implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
+    implementation("com.squareup.okhttp3:okhttp:4.1.1")
+    implementation("com.squareup.okio:okio:2.2.2")
+    implementation("com.google.code.gson:gson:2.8.6")
+
+    //刷新
+    implementation("com.scwang.smart:refresh-layout-kernel:2.0.0")
+    implementation("com.scwang.smart:refresh-header-material:2.0.0")
     //保险套
     implementation(Deps.Oasisfeng.condom)
     //Gilde

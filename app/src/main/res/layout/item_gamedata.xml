@@ -3,11 +3,19 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:id="@+id/game_download">
+              android:id="@+id/game_download"
+              android:paddingTop="2dp"
+              android:paddingBottom="2dp"
+              style="?android:attr/buttonBarButtonStyle"
+              android:background="?attr/selectableItemBackground">
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/game_version"
             android:textColor="?colorAccent"
-            android:layout_gravity="center_horizontal"/>
+            android:textSize="28sp"
+            android:padding="4dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#20000000"/>
+
 </LinearLayout>
