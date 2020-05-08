@@ -84,11 +84,6 @@
                 android:title="@string/setting_contributor_domain_name_title"/>
 
         <Preference
-                android:key="program"
-                android:summary="@string/setting_contributor_program_summary"
-                android:title="@string/setting_contributor_program_title"/>
-
-        <Preference
                 android:key="translation_tw"
                 android:summary="@string/setting_contributor_translation_tw_summary"
                 android:title="@string/setting_contributor_translation_tw_title" />

@@ -36,6 +36,7 @@
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".setting.SettingsActivity"/>
+        <activity android:name=".base.BaseActivity"/>
 
         <provider
                 android:name="cn.bmob.v3.util.BmobContentProvider"
