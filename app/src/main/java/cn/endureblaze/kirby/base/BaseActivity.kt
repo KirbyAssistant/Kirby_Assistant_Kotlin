@@ -12,7 +12,6 @@ import cn.endureblaze.kirby.utils.ActManager
 import cn.endureblaze.kirby.utils.ContextWrapper
 import cn.endureblaze.kirby.utils.LanguageUtil
 import com.oasisfeng.condom.CondomContext
-import java.util.*
 
 open class BaseActivity: AppCompatActivity() {
 

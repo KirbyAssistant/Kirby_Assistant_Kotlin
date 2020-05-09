@@ -60,6 +60,10 @@ dependencies {
     implementation("com.squareup.okio:okio:2.2.2")
     implementation("com.google.code.gson:gson:2.8.6")
 
+    //协程
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5")
+
     //刷新
     implementation("com.scwang.smart:refresh-layout-kernel:2.0.0")
     implementation("com.scwang.smart:refresh-header-material:2.0.0")

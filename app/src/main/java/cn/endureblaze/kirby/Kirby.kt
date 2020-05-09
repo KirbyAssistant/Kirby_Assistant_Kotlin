@@ -1,13 +1,13 @@
 package cn.endureblaze.kirby
 
 import android.app.Application
+import android.content.Context
 import com.bumptech.glide.request.RequestOptions
 
 class Kirby : Application() {
 
     companion object {
-        private var instance: Application? = null
-        fun instance() = instance!!
+        lateinit var context: Context
 
         fun getGlideRequestOptions(): RequestOptions {
             val requ = RequestOptions()
@@ -19,6 +19,6 @@ class Kirby : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        instance = this
+        context = applicationContext
     }
 }

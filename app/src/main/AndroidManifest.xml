@@ -20,12 +20,12 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup">
-        <activity android:name=".res.cheatcode.CheatCodeActivity">
+        <activity android:name=".ui.cheatcode.CheatCodeActivity">
         </activity>
-        <activity android:name=".res.gamelist.GameListActivity">
+        <activity android:name=".ui.gamelist.GameListActivity">
         </activity>
         <activity
-                android:name=".Launcher"
+                android:name=".ui.Launcher"
                 android:theme="@style/LauncherLoading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -33,9 +33,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.main.MainActivity">
         </activity>
-        <activity android:name=".setting.SettingsActivity"/>
+        <activity android:name="cn.endureblaze.kirby.ui.settings.SettingsActivity"/>
         <activity android:name=".base.BaseActivity"/>
 
         <provider
