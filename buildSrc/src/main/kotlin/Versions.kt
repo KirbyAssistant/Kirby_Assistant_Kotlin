@@ -2,7 +2,7 @@ object Versions {
 
     const val kotlin = "1.3.72"
     const val condom = "2.5.0"
-    const val gilde = "4.11.0"
+    const val glide = "4.11.0"
     //androidx
     const val core_ktx = "1.2.0"
     const val constraintlayout ="1.1.3"

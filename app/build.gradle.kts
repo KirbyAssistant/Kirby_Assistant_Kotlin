@@ -69,9 +69,9 @@ dependencies {
     implementation("com.scwang.smart:refresh-header-material:2.0.0")
     //保险套
     implementation(Deps.Oasisfeng.condom)
-    //Gilde
-    implementation(Deps.Gilde.gilde)
-    annotationProcessor(Deps.Gilde.compiler)
+    //Glide
+    implementation(Deps.Glide.glide)
+    annotationProcessor(Deps.Glide.compiler)
     implementation("com.github.EndureBlaze:GlideCache:1.2")
     //androidx
     implementation("androidx.core:core-ktx:1.2.0")

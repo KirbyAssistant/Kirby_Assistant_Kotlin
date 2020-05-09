@@ -49,11 +49,11 @@ class CheatCodeActivity : BaseActivity() {
     private fun initCheatCode() {
         val tag = intent.getStringExtra(gameTag)
         tag?.let {
-            val adaper = CheatCodeAdapter(
+            val adapter = CheatCodeAdapter(
                 this,
                 viewModel.getCheatCodeData(it)
             )
-            viewModel.binding.cheatcodeList.adapter = adaper
+            viewModel.binding.cheatcodeList.adapter = adapter
         }
     }
 }

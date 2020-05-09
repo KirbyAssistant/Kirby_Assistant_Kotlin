@@ -4,7 +4,7 @@ import org.gradle.kotlin.dsl.project
 
 object Deps {
 
-    object AdnroidX {
+    object AndroidX {
         const val core_ktx = "androidx.core:core-ktx:${Versions.core_ktx}"
         const val constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}"
         const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
@@ -19,9 +19,9 @@ object Deps {
         const val condom = "com.oasisfeng.condom:library:${Versions.condom}"
     }
 
-    object Gilde {
-        const val gilde = "com.github.bumptech.glide:glide:${Versions.gilde}"
-        const val compiler = "com.github.bumptech.glide:compiler:${Versions.gilde}"
+    object Glide {
+        const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+        const val compiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
     }
 
     object Kotlin {

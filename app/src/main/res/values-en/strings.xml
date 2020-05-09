@@ -38,7 +38,7 @@
     <!--结束————游戏下载-->
 
     <!--文件下载-->
-    <string name="download_dia_mess">ONLY Chinesize Version</string>
+    <string name="download_dia_mess">ONLY Chinese Version</string>
     <string name="downloading">Downloading</string>
     <string name="download_success">Download Successfully，Save Path:</string>
     <string name="download_fail">Download Unsuccessfully:</string>
@@ -71,7 +71,7 @@
     <string name="user_email_fail">The mailbox format is not correct</string>
 
     <string name="user_info_title">用户信息</string>
-    <string name="user_avatar_upload">Avater Uploading</string>
+    <string name="user_avatar_upload">Avatar Uploading</string>
 
     <string name="user_email">E-mail</string>
     <string name="user_not_have_user">No account number? Click me</string>
@@ -130,53 +130,39 @@
 
     <string name="setting_dev_title">Developer</string>
     <string name="setting_dev_coolapk_title">CoolApk @汝南京</string>
-    <string name="setting_dev_coolapk_link" translatable="false">aHR0cDovL3d3dy5jb29sYXBrLmNvbS91LzY1MTg4MA==</string>
     <string name="setting_dev_github_title">Github @EnduerBlaze</string>
-    <string name="setting_dev_github_link" translatable="false">aHR0cHM6Ly9naXRodWIuY29tL0VuZHVyZUJsYXpl</string>
     <string name="setting_dev_weibo_title">Weibo @汝南京</string>
-    <string name="setting_dev_weibo_link" translatable="false">aHR0cHM6Ly93ZWliby5jb20vcnVuYW5qaW5n</string>
     <string name="setting_dev_twitter_title">Twitter @EndureBlaze</string>
-    <string name="setting_dev_twitter_link" translatable="false">aHR0cHM6Ly90d2l0dGVyLmNvbS9uaWhhb2N1bj9zPTA5</string>
 
     <string name="setting_contributor_title">Contributor</string>
     <string name="setting_contributor_domain_name_title">Special contribution of domain</string>
     <string name="setting_contributor_domain_name_summary">View @邵旭东 Website</string>
-    <string name="setting_contributor_domain_name_link" translatable="false">aHR0cDovL3d3dy5zaGFveHVkb25nLmNvbS8=</string>
     <string name="setting_contributor_program_title">Special contribution of program</string>
     <string name="setting_contributor_program_summary">Github @lxfly2000</string>
-    <string name="setting_contributor_program_link" translatable="false">aHR0cHM6Ly9naXRodWIuY29tL2x4Zmx5MjAwMA==</string>
     <string name="setting_contributor_translation_tw_title">Traditional Chinese translator</string>
     <string name="setting_contributor_translation_tw_summary">Github @longxk2017</string>
-    <string name="setting_contributor_translation_tw_link" translatable="false">aHR0cHM6Ly9naXRodWIuY29tL2xvbmd4azIwMTc=</string>
     <string name="setting_contributor_translation_en_title">English translator</string>
     <string name="setting_contributor_translation_en_1_summary">Baidu Tieba @难难难550</string>
-    <string name="setting_contributor_translation_en_1_link" translatable="false">aHR0cHM6Ly90aWViYS5iYWlkdS5jb20vaG9tZS9tYWluP3VuPemavumavumavjU1MA==</string>
     <string name="setting_contributor_translation_en_2_summary">Baidu Tieba @光之耀西</string>
-    <string name="setting_contributor_translation_en_2_link" translatable="false">aHR0cDovL3RpZWJhLmJhaWR1LmNvbS9ob21lL21haW4/dW495YWJ5LmL6ICA6KW/</string>
     <string name="setting_contributor_draw_icon_title">Draw ICON</string>
     <string name="setting_contributor_draw_icon_1_summary">Coolapk @hk流星</string>
-    <string name="setting_contributor_draw_icon_1_link" translatable="false">aHR0cDovL3d3dy5jb29sYXBrLmNvbS91LzU1NTg4Mw==</string>
     <string name="setting_contributor_draw_icon_2_summary">Coolapk @Markuss</string>
-    <string name="setting_contributor_draw_icon_2_link" translatable="false">aHR0cDovL3d3dy5jb29sYXBrLmNvbS91LzUyOTcxOA==</string>
     <string name="setting_contributor_draw_icon_3_summary">Baidu Tieba @★☆小伊布☆★</string>
-    <string name="setting_contributor_draw_icon_3_link" translatable="false">aHR0cHM6Ly90aWViYS5iYWlkdS5jb20vaG9tZS9tYWluP3VuPeKYheKYhuWwj+S8iuW4g+KYhuKYhQ==</string>
     <string name="setting_contributor_video_author_title">Video author</string>
     <string name="setting_contributor_video_author_summary">Bilibili @虚影无华</string>
-    <string name="setting_contributor_video_author_link" translatable="false">aHR0cDovL3NwYWNlLmJpbGliaWxpLmNvbS8xMzAwMTI1Mg==</string>
     <string name="setting_contributor_writer_help_faq_title">FAQ Writer</string>
     <string name="setting_contributor_writer_help_faq_summary">Coolapk @塔林狐</string>
-    <string name="setting_contributor_writer_help_faq_link" translatable="false">aHR0cDovL3d3dy5jb29sYXBrLmNvbS91LzExNTc3NzQ=</string>
     <!--结束————设置-->
 
     <!--对话框用词-->
     <string name="dia_download">Download</string>
     <string name="dia_yes">Yes</string>
-    <string name="dia_enable">Enale</string>
+    <string name="dia_enable">Enable</string>
     <string name="dia_disable">Disable</string>
     <string name="dia_cancel">Cancel</string>
     <string name="dia_jp">Japanese Version</string>
     <string name="dia_us">North America Version</string>
-    <string name="dia_cn">Chinesize Version</string>
+    <string name="dia_cn">Chinese Version</string>
     <string name="dia_nu"/>
     <string name="dia_agree">Agree</string>
     <string name="dia_disagree">Agree</string>
@@ -193,9 +179,9 @@
     <string name="link_ser_now">Linking Server…</string>
     <string name="link_ser_fail">Link Server Fail</string>
     <string name="modify_success">Modify Successfully</string>
-    <string name="modify_fail">MOdify Unsuccessfully:</string>
+    <string name="modify_fail">Modify Unsuccessfully:</string>
     <string name="two_back">Please press exit again</string>
-    <string name="check_me">Cheak me</string>
+    <string name="check_me">Check me</string>
     <string name="close">Close</string>
     <string name="menu">Menu</string>
     <string name="copy_text">Copy content</string>

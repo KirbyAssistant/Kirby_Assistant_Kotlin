@@ -173,6 +173,7 @@ object FileUtil {
      * @param filePath 被删除文件的文件路径
      * @return 文件删除成功返回 true，否则返回 false
      */
+    @JvmStatic
     fun delFile(filePath: String): Boolean {
         val file = File(filePath)
         if (file.isFile && file.exists()) {
@@ -187,6 +188,7 @@ object FileUtil {
      * @param isDelThisDir 是否删除当前剩下的空目录
      * @return 目录删除成功返回 true，否则返回 false
      */
+    @JvmStatic
     fun delDir(filePath: String, isDelThisDir: Boolean): Boolean {
         var flag: Boolean
         var path = filePath

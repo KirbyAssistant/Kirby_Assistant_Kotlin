@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.widget.GridView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.edit
-import kotlin.reflect.KFunction0
 
 /**
  * 主题的管理器

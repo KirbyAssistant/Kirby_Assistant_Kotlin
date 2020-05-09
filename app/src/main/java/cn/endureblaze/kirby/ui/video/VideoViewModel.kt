@@ -34,12 +34,12 @@ class VideoViewModel : ViewModel() {
                                     val videoTitle = ele.name
                                     val videoImageUrl = ele.imageUrl
                                     //添加进 data class
-                                    val videiItem = Video(
+                                    val videoItem = Video(
                                         videoTitle!!,
                                         videoImageUrl!!,
                                         videoUrl!!
                                     )
-                                    videoList.add(videiItem)
+                                    videoList.add(videoItem)
                                 }
                             }
                             onFinish()

@@ -3,7 +3,6 @@ package cn.endureblaze.kirby.utils
 import android.content.Context
 import android.os.Build
 import android.os.LocaleList
-import android.sax.EndElementListener
 import androidx.core.content.edit
 import java.util.*
 
